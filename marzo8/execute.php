@@ -45,7 +45,35 @@
 		//i parametri sono cosa voglio mandare indietro al mio utente, rimando il testo che
 		//ho ricevuto e che si trova nella variabile $text
 		$parameters = array('chat_id' => $chatId, "text" => $text);
-		
+		if($text=="data"||$text=="/data"){
+			$text="La data odierna è:".date("d.m.y");
+			$parameters= array('chat_id=> $chatId, "text" => $text);
+			
+			}
+			
+			if($text=="meteo"||$text=="/meteo"){
+			$text="il meteo oggi è nevoso";
+			$parameters = array('chat_id' => $chatId,"text" => $text);
+			}
+			
+		if ($text=="foto"||$text=="/foto"){
+			$foto[0]="foto.png";
+			$foto[1]="foto1.png";
+			$foto[2]="foto2.pgn";
+			$num=rand(0,2);
+			
+			sendFoto($chatId,$foto[$num],false,"La mia foto",$api);
+			}
+			if($text=="barz"){
+			$barz[0]="Un cavallo va dal benzinaio e chiede:il fieno per favore!";
+			$barz[1]="Qual'è il colmo per untuffatore? Fare un buco nell'acqua!";
+			$barz[2]"Qual'è il colmo per un centralinista? avere problemi di linea!";
+			$barz[3]="Come si chiama il povero morto in un incidente stradale? Sutankamion!";
+			
+			$i=rand(0,3);
+			
+			$parameters = array('chat_id' => $chatId, "text" => $barz[$i]);
+			
 	
 		
 		//aggiungo il comando di invio
