@@ -5,10 +5,10 @@
 		//https://username.herokuapp.com/execute.php
 		$WEBHOOK_URL = 'https://sandiano-scala-montagne.herokuapp.com/execute.php';
 		//inserite il vostro token che vi ha fornito l'utente telegram @botfather
-		$BOT_TOKEN = '632416820:AAFDMM0UAWUS5Ge4YXXbXnzaOiRWfXTNwu0' ;
+		$BOT_TOKEN = '632416820:AAFDMM0UAWUS5Ge4YXXbXnzaOiRWfXTNwu0';
 
 		// NON APPORTARE MODIFICHE NEL CODICE SEGUENTE
-		$API_URL = 'https://api.telegram.org/bot' . $BOT_TOKEN .'/';
+		$API_URL = 'https://api.telegram.org/bot'. $BOT_TOKEN .'/';
 		$method = 'setWebhook';
 		$parameters = array('url' => $WEBHOOK_URL);
 		$url = $API_URL . $method. '?' . http_build_query($parameters);
